@@ -1,0 +1,77 @@
+<style>
+.tabs{max-width:760px!important}#r5-api-choice.on{background:#2563eb;color:#fff;border-color:#3b82f6}
+#r3-subscription-status,#v10-api-subscription{display:none!important}
+#v10-version-choice{border:1px solid #35405f;border-radius:10px;background:#172536;color:#fff;padding:9px 12px;font-weight:700;cursor:pointer;white-space:nowrap}
+#v10-version-dialog{border:1px solid #456478;border-radius:16px;background:#172536;color:#fff;max-width:90vw;padding:24px;font:700 16px Arial,'Malgun Gothic',sans-serif}
+#v10-version-dialog::backdrop{background:rgba(0,0,0,.65)}#v10-version-dialog button{margin:14px 8px 0 0;border:1px solid #456478;border-radius:10px;padding:12px 24px;background:#2563eb;color:#fff;font-weight:700;cursor:pointer}
+#v10-version-choice:disabled,#r5-api-choice:disabled,#v10-version-dialog button:disabled{opacity:.45;cursor:default}
+</style>
+<script>
+(()=>{
+ const secret='__SELECTOR_TOKEN__',apiOnly=__API_ONLY__,family=apiOnly?'api':'v10',E=id=>document.getElementById(id);
+ const chooser=document.createElement('button');chooser.id='v10-version-choice';chooser.textContent='버전 선택';chooser.type='button';
+ const dialog=document.createElement('dialog');dialog.id='v10-version-dialog';
+ const title=document.createElement('div');title.textContent='사용할 버전 선택';
+ const status=document.createElement('div');status.setAttribute('role','status');status.style.cssText='font-size:13px;margin-top:12px;color:#b8c9d9';status.textContent='전환하면 프로그램이 다시 시작됩니다.';
+ const choices=document.createElement('div');dialog.append(title,choices,status);document.body.append(dialog);
+ let restarting=false,selectQueue=Promise.resolve(),authenticated=false,firstChoiceShown=false,apiButton=null,apiBadge=null,previousButtons=[];
+ async function waitForRestart(desired){
+  const deadline=Date.now()+90000;
+  while(Date.now()<deadline){
+   try{
+    const response=await fetch('/api/v10/selection',{cache:'no-store',signal:AbortSignal.timeout(2500)}),state=await response.json();
+    if(response.ok&&state.ok&&state.family===desired){
+     const healthResponse=await fetch('/api/health',{cache:'no-store',signal:AbortSignal.timeout(2500)}),health=await healthResponse.json();
+     if(healthResponse.ok&&health.longform&&health.shorts){location.replace('/?mode='+(state.mode==='shorts'?'shorts':'longform')+'&_startup='+Date.now());return;}
+    }
+   }catch(_){}
+   await new Promise(resolve=>setTimeout(resolve,800));
+  }
+  status.textContent='새 실행 화면을 연결하지 못했습니다. 실행 CMD에 표시된 상태를 확인해 주세요.';
+  previousButtons.forEach(([button,disabled])=>button.disabled=disabled);previousButtons=[];
+  restarting=false;enableChoice(authenticated);
+ }
+ function rememberMode(){selectQueue=selectQueue.catch(()=>{}).then(()=>fetch('/api/v10/selection',{method:'POST',headers:{'Content-Type':'application/json','X-DINO-Selector':secret},body:JSON.stringify({family,mode})}));return selectQueue;}
+ async function switchVersion(desired){
+  if(restarting||!authenticated)return;
+  try{
+   const r=await fetch('/api/v10/version',{method:'POST',headers:{'Content-Type':'application/json','X-DINO-Selector':secret},body:JSON.stringify({family:desired})}),d=await r.json();
+   if(r.status===403&&d.error==='현재 화면에서 다시 선택하세요.'){location.replace('/?mode='+mode+'&_startup='+Date.now());return;}
+   if(!r.ok||!d.ok)throw new Error(d.error||'버전 선택을 확인하세요.');
+   if(!d.restarting){dialog.close();return;}
+   restarting=true;if(!dialog.open)dialog.showModal();status.textContent='기존 프로그램과 CMD를 종료하고 '+(desired==='api'?'API':'드롭샷')+' 버전을 새로 실행합니다…';
+   previousButtons=Array.from(document.querySelectorAll('button'),b=>[b,b.disabled]);previousButtons.forEach(([b])=>b.disabled=true);
+   void waitForRestart(desired);
+  }catch(error){if(!dialog.open)dialog.showModal();status.textContent=error instanceof TypeError?'프로그램 연결이 끊겼습니다. 00_실행.cmd로 다시 실행하세요.':error.message;}
+ }
+ for(const [key,label] of [['v10','드롭샷'],['api','API']]){const b=document.createElement('button');b.type='button';b.textContent=label;b.onclick=()=>switchVersion(key);choices.append(b);}
+ const close=document.createElement('button');close.type='button';close.textContent='닫기';close.onclick=()=>dialog.close();choices.append(close);
+ chooser.onclick=()=>{status.textContent='전환하면 프로그램이 다시 시작됩니다.';dialog.showModal();};
+ if(apiOnly){
+  document.title='DINO 13.2 몰입형 ';document.querySelector('.brand').textContent='DINO 13.2 몰입형 API';
+  E('long').textContent='API 롱폼 16:9';E('short').textContent='API 쇼츠 9:16';
+  document.querySelector('.top').insertBefore(chooser,E('exit-btn'));
+  const css=document.createElement('style');css.textContent='#status,.help{display:none!important}';document.head.append(css);
+ }else{
+  apiButton=document.createElement('button');apiButton.id='r5-api-choice';apiButton.className='tab';apiButton.type='button';apiButton.textContent='API';apiButton.onclick=()=>switchVersion('api');E('short').after(apiButton);document.querySelector('.top').append(chooser);
+ }
+ function enableChoice(valid){
+  authenticated=valid;chooser.disabled=!valid||restarting;chooser.title=valid?'사용할 버전 선택':'구독 인증을 먼저 완료하세요.';
+  if(apiButton)apiButton.disabled=!valid||restarting;
+  choices.querySelectorAll('button').forEach(b=>b.disabled=!valid||restarting);
+  close.disabled=restarting;
+ }
+ async function refreshLicense(){
+  if(restarting)return;
+  try{
+   if(apiBadge)apiBadge.textContent='구독 확인 중 · 서버 응답을 기다리고 있습니다…';
+   const r=await fetch('/api/v10/license',{cache:'no-store',signal:AbortSignal.timeout(160000)}),d=await r.json(),info=d.data||{};
+   enableChoice(r.ok&&d.ok&&info.valid===true);
+   if(apiBadge)apiBadge.textContent=authenticated?'구독 인증 완료 · '+(info.days_left??'-')+'일 남음':(info.connection_pending?'인증 정보 유지 · 서버 연결 재확인 중':'구독 인증 필요');
+   if(authenticated&&!d.version_chosen&&!firstChoiceShown){firstChoiceShown=true;dialog.showModal();}
+  }catch(_){enableChoice(false);if(apiBadge)apiBadge.textContent='서버 연결 재확인 중';}
+  if(!restarting)setTimeout(refreshLicense,authenticated?60000:3000);
+ }
+ const previous=setMode;setMode=function(m){previous(m);rememberMode();};rememberMode().finally(refreshLicense);enableChoice(false);
+})();
+</script>

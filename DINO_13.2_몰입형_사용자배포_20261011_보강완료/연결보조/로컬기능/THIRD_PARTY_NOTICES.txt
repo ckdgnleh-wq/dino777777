@@ -1,0 +1,31 @@
+﻿DINO 13.2 몰입형 로컬 기능 · 외부 구성요소 안내
+
+모델은 배포 ZIP에 들어 있지 않습니다. 사용자가 사양 확인 후 설치를 선택하면
+manifest.json에 기록된 공식/배포 저장소의 고정 버전을 다운로드·검증합니다.
+
+Z-Image Turbo 및 배포 FP8 가중치 — Apache-2.0
+https://huggingface.co/Tongyi-MAI/Z-Image-Turbo
+https://huggingface.co/Kijai/Z-Image_comfy_fp8_scaled
+https://huggingface.co/Comfy-Org/z_image_turbo
+FLUX.2 klein 4B FP8 및 공유 인코더/VAE — Apache-2.0
+https://huggingface.co/black-forest-labs/FLUX.2-klein-4b-fp8
+https://huggingface.co/Comfy-Org/flux2-klein-4B
+이 안내는 4B 모델에 해당합니다. 다른 크기의 FLUX 모델은 라이선스가 다릅니다.
+Qwen3-TTS-12Hz-0.6B-Base — Apache-2.0
+https://huggingface.co/Qwen/Qwen3-TTS-12Hz-0.6B-Base
+https://github.com/QwenLM/Qwen3-TTS
+faster-whisper-small — MIT
+https://huggingface.co/Systran/faster-whisper-small
+https://github.com/SYSTRAN/faster-whisper
+
+ComfyUI v0.10.0, commit 9d273d3ab1fb1d2c8b34de4d54cabe50a5a3e5bc — GPL-3.0
+https://github.com/Comfy-Org/ComfyUI
+설치 시 해당 commit의 전체 소스 ZIP과 LICENSE를 다운로드합니다.
+다운로드 ZIP은 설치 폴더/downloads에, 실행 소스는 image/ComfyUI에 보관됩니다.
+CUDA 12.4 / torch 2.6 호환을 위해 requirements.txt의 comfy-kitchen>=0.2.7을
+comfy-kitchen==0.2.5로 고정합니다. 다운로드 원본은 그대로 보관됩니다.
+
+Python 3.12.10 — PSF License, https://www.python.org/downloads/release/python-31210/
+PyTorch — BSD-3-Clause, https://github.com/pytorch/pytorch
+각 런타임의 라이선스와 dist-info 정보를 설치 폴더에 보관합니다.
+추가 패키지의 라이선스는 설치된 각 패키지의 dist-info와 공식 저장소에 있습니다.

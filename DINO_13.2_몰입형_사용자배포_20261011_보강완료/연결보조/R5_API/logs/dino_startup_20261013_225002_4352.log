@@ -1,0 +1,15 @@
+DINO startup diagnostics: v11.0.0-20261005
+2026-10-13 22:50:02 [python_ready] Python 3.11.9; platform=win32
+2026-10-13 22:50:02 [distribution] C:\Users\Win11\Documents\디노프로\DINO_13.2_몰입형_사용자배포_20261011_보강완료\DINO_13.2_몰입형_사용자배포_20261011_보강완료\연결보조\R5_API
+2026-10-13 22:50:02 [launcher_enter] 
+2026-10-13 22:50:06 [startup_failure] Traceback (most recent call last):
+  File "dino75_startup_log.py", line 135, in run_entry
+  File "dino75_bootstrap.py", line 4, in <module>
+  File "dino75_runtime.py", line 628, in execute
+  File "DinoUnifiedHub.py", line 14, in <module>
+  File "DinoUnifiedHub.py", line 398, in <module>
+  File "DinoUnifiedHub.py", line 9, in _api_run_hub
+  File "<frozen os>", line 679, in __getitem__
+KeyError: 'DINO_MANAGER_ROOT'
+
+2026-10-13 22:50:26 [process_exit] 

@@ -1,0 +1,20 @@
+{
+  "build": "8.0.8-generate-click-only",
+  "time": "2026-10-13 22:50:05",
+  "phase": "installed",
+  "message": "이미지 입력/클릭 및 영상 저장 보호 적용. DeepSeek·구독 인증 변경 없음.",
+  "events": [
+    {
+      "build": "8.0.8-generate-click-only",
+      "time": "2026-10-13 22:50:04",
+      "phase": "installed",
+      "message": "이미지 입력/클릭 및 영상 저장 보호 적용. DeepSeek·구독 인증 변경 없음."
+    },
+    {
+      "build": "8.0.8-generate-click-only",
+      "time": "2026-10-13 22:50:05",
+      "phase": "installed",
+      "message": "이미지 입력/클릭 및 영상 저장 보호 적용. DeepSeek·구독 인증 변경 없음."
+    }
+  ]
+}

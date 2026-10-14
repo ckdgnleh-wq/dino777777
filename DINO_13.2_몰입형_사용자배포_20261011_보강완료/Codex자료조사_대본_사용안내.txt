@@ -1,0 +1,24 @@
+﻿Codex 자료 조사·대본 제작 모드
+
+자료 조사·대본 연결에서 다음 중 선택합니다.
+- 기존 API: 기존 Luna 조사와 DeepSeek 대본 설정을 유지합니다.
+- Codex 제작: Codex PC앱의 대화에서 원문 조사, 대본, 장면 프롬프트를 작성합니다.
+
+Codex 모드를 선택한 뒤 Codex PC앱의 대화에서 다음처럼 요청하세요.
+“DINO Codex 모드로 [주제] 쇼츠 제작해줘.”
+프로그램 화면에서 주제를 넣고 전체 제작을 눌러도 됩니다.
+Codex 제작 요청문이 표시되면 복사해 Codex PC앱의 대화에 전달합니다.
+DINO가 채팅을 자동 시작하지는 않습니다.
+
+Codex는 연결보조/Codex이미지/codex_text_worker.py 도우미를 사용합니다.
+시작: start --mode shorts 또는 longform --title <주제>
+읽기: next --request <요청 파일>
+등록: complete --request <요청 파일> --source <UTF-8 JSON 결과 파일>
+오류: fail --request <요청 파일> --error <이유>
+등록 뒤 다음 요청을 다시 읽고, Codex 이미지 요청과 Dropshot 영상 요청도 이어 처리합니다.
+
+기존 대본·분량·언어·장면 지침과 파싱·품질 검사를 적용합니다.
+대본 품질이 DeepSeek와 항상 같거나 더 좋다는 보장은 하지 않습니다.
+중지·초기화되거나 작업이 바뀐 응답은 등록을 거부합니다.
+Codex 모드의 텍스트 처리에서 외부 대본 API로 자동 대체하지 않습니다.
+음성 및 선택한 영상·이미지 API의 비용은 기존 제공사 설정에 따릅니다.

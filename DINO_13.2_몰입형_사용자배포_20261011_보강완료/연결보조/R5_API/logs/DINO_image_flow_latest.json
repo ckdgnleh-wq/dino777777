@@ -1,0 +1,18 @@
+{
+  "build": "DINO 13.2 몰입형 · 사용자버전",
+  "session": "shorts.DinoShorts_v6_91",
+  "phase": "ready",
+  "message": "DINO V12 사용자버전 준비 완료 · 이미지 자동인식 → 자막 자동 적용 → MP4 저장",
+  "events": [
+    {
+      "time": "2026-10-13 22:50:04",
+      "phase": "ready",
+      "message": "DINO V12 사용자버전 준비 완료 · 이미지 자동인식 → 자막 자동 적용 → MP4 저장"
+    },
+    {
+      "time": "2026-10-13 22:50:05",
+      "phase": "ready",
+      "message": "DINO V12 사용자버전 준비 완료 · 이미지 자동인식 → 자막 자동 적용 → MP4 저장"
+    }
+  ]
+}

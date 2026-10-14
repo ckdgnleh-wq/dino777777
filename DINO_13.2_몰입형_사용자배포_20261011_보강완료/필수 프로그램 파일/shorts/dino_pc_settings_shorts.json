@@ -1,0 +1,40 @@
+{
+  "title": {
+    "bg_color": "#000000",
+    "bg_opacity": "100",
+    "bg_height": "420",
+    "bg_y": "0",
+    "y": "4",
+    "gap": "0",
+    "line1_size": "300",
+    "line2_size": "300",
+    "line1_color": "#ffffff",
+    "line2_color": "#ffff00",
+    "outline": "0",
+    "outline_color": "#000000",
+    "shadow": "0",
+    "spacing": "0",
+    "scale_x": "100",
+    "bg_enabled": true,
+    "overlay_style": "top-band-v5",
+    "font_name": "Pretendard Black",
+    "text_style_version": 1
+  },
+  "subtitle": {
+    "bg": "100",
+    "bg_color": "#000000",
+    "bg_enabled": true,
+    "color": "#ffffff",
+    "font_name": "Pretendard Black",
+    "font_size": "128",
+    "mode": "typo",
+    "outline": "7",
+    "outline_color": "#000000",
+    "outline_enabled": true,
+    "shadow": "1",
+    "single_line_black_version": "1",
+    "text_style_version": 1,
+    "typo_effect": "pop",
+    "y": "68"
+  }
+}

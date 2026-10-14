@@ -1,0 +1,671 @@
+{
+  "version": "13.2.0",
+  "local_voice_cache_recovery": {
+    "patch": "voice-memory-quality-recovery-3",
+    "acoustic_mismatch_retries": 2,
+    "unverified_request_audio_backed_up_before_regeneration": true,
+    "caption_validation_threshold_not_lowered": true,
+    "windows_supported_safe_open_backend": "pread",
+    "loader_changes_isolated_to_voice_process": true,
+    "recoverable_memory_retries": 2,
+    "partial_model_references_cleared_before_retry": true,
+    "same_voice_and_finished_chunks_reused": true,
+    "permanent_errors_not_reported_as_success": true,
+    "canonical_numba_cache_per_customer": true,
+    "single_write_probe_no_tempfile_retry_loop": true,
+    "bounded_progress_query_retry": true,
+    "voice_generation_POST_not_retried": true,
+    "registered_voice_and_models_unchanged": true,
+    "executables_unchanged": true,
+    "private_voice_or_cache_not_bundled": true
+  },
+  "runtime_path_persistence": {
+    "updated": "2026-10-07",
+    "physical_paths_saved_per_customer": true,
+    "validated_junction_recovery_on_startup": true,
+    "running_servers_not_relinked": true,
+    "saved_voice_reference_recovery": true,
+    "models_not_copied_or_redownloaded": true,
+    "private_paths_not_bundled": true,
+    "exe_binaries_unchanged": true,
+    "regression_checks": 8
+  },
+  "name": "DINO 13.2 몰입형",
+  "edition": "사용자버전",
+  "web_writer_removed": [
+    "API",
+    "Dropshot"
+  ],
+  "retired_web_controls_removed": true,
+  "api_start_buttons_bound": true,
+  "longform_duplicate_guard": true,
+  "selected_models_only": true,
+  "independent_image_model": true,
+  "script_providers": [
+    "KIE",
+    "OpenRouter"
+  ],
+  "direct_script_preserved": true,
+  "longform_minutes": [
+    10,
+    20,
+    30,
+    60
+  ],
+  "bundled_api_keys": false,
+  "bundled_customer_state": false,
+  "paid_verification_calls": 0,
+  "engines": {
+    "api": {
+      "sha256": "9c32b26cafb019506034e66cc301c604ca34aadb5a1fef1a76d005478f326ad5",
+      "changed_modules": [
+        "dino81_r3",
+        "dino_r5",
+        "dino_customer_local"
+      ],
+      "runtime": 311
+    },
+    "dropshot": {
+      "sha256": "9d1f391f8ed6bae64f5d7f72c742f50904b63967bb6142371a62f7a9ce9bb2dd",
+      "changed_modules": [
+        "dino81_r3",
+        "dino_r5",
+        "dino_customer_local"
+      ],
+      "runtime": 311
+    }
+  },
+  "restart_closes_cmd": true,
+  "ready_window": true,
+  "launcher_bom_removed": true,
+  "startup_update": {
+    "changed_entries": [
+      "DinoUnifiedHub"
+    ],
+    "all_engine_modules_unchanged": true,
+    "sha256": "cd6981ae22a09aa42de24aabcadddec524bfa6a9714c9fd5965cd10e0806cbd9"
+  },
+  "shorts_final_max_seconds": 170,
+  "shorts_validation_editions": [
+    "API",
+    "Dropshot"
+  ],
+  "shorts_preserves_ending": true,
+  "shorts_closing_pause_seconds": 1.5,
+  "shorts_preview_lock_fixed": true,
+  "shorts_update": {
+    "root": {
+      "sha256": "5ed21284dcb78fc7a9c6d0e4380d61fb97be953cac1fd0734c2ab0f162007d1f",
+      "changed_modules": [
+        "dino75_fullauto",
+        "dino81_r3",
+        "dino_r5",
+        "shorts_duration_v10"
+      ],
+      "runtime": 311
+    },
+    "api": {
+      "sha256": "d137204e852f1b19e40f836f78ae39c77a58f3ca1bdf39a6f1a9156263f96e55",
+      "changed_modules": [
+        "dino75_fullauto",
+        "dino_r5",
+        "shorts_duration_v10"
+      ],
+      "runtime": 311
+    }
+  },
+  "research_model": "GPT-6 Luna",
+  "research_providers": [
+    "KIE",
+    "OpenRouter"
+  ],
+  "research_editions": [
+    "API",
+    "Dropshot"
+  ],
+  "research_update": {
+    "root": {
+      "sha256": "7ad358e47b45d95c0bfbe513b63a1d34ab4b7f384cdde90fb5f9f570536344ff",
+      "changed_modules": [
+        "dino81_r3",
+        "dino_r5"
+      ],
+      "runtime": 311
+    },
+    "api": {
+      "sha256": "114c76ad99cba81b50ec0cf690b326a2c3a55fe6727df8860994865be237ce27",
+      "changed_modules": [
+        "dino81_r3",
+        "dino_r5"
+      ],
+      "runtime": 311
+    }
+  },
+  "script_default": "DeepSeek V4.1 Flash",
+  "script_alternatives": [
+    "Claude Sonnet 5.5"
+  ],
+  "presentation_update": {
+    "root": {
+      "sha256": "7bae0dfc288011f6267f518bf7500fd03db1375562806b04909d5c1f7b4dbd15",
+      "changed_modules": [
+        "dino81_r3",
+        "dino_r5",
+        "dino75_runtime",
+        "dino75_guides",
+        "dino75_nocoord",
+        "dino75_startup_log",
+        "dino75_deepseek_delivery"
+      ],
+      "runtime": 311,
+      "changed_outer_entries": [
+        "DinoUnifiedHub",
+        "PYZ.pyz"
+      ]
+    },
+    "api": {
+      "sha256": "b0be896f3c86f9c3149af7bd3f880068a3f76adcc2ef85812dc7faf43052ac1b",
+      "changed_modules": [
+        "dino81_r3",
+        "dino_r5",
+        "dino75_runtime",
+        "dino75_guides",
+        "dino75_nocoord",
+        "dino75_startup_log",
+        "dino75_deepseek_delivery"
+      ],
+      "runtime": 311,
+      "changed_outer_entries": [
+        "PYZ.pyz"
+      ]
+    }
+  },
+  "model_changes_location": "설정 · 선택 사항",
+  "shorts_ui_update": {
+    "longform_selector_removed": true,
+    "max_seconds": 170,
+    "both_editions": true,
+    "generation_wait_seconds": 60,
+    "button_wait_seconds": 10,
+    "paid_calls": 0
+  },
+  "writer_results_update": {
+    "research_model": "GPT-6 Luna",
+    "shared_result_view": true,
+    "source_evidence_tabs": true,
+    "txt_downloads": true,
+    "both_editions": true,
+    "paid_calls": 0
+  },
+  "full_reset_closes_app_and_cmd": true,
+  "license_transport": {
+    "connect_seconds": 10,
+    "read_seconds": 60,
+    "check_attempts": 2,
+    "activation_replayed": false,
+    "expiry_policy_unchanged": true,
+    "saved_server_verified_expiry": true,
+    "session_encryption": "Windows current-user DPAPI"
+  },
+  "license_connection_retries": 1,
+  "license_errors_customer_friendly": true,
+  "subscription_auth_persisted_until_expiry": true,
+  "license_transport_scoped": true,
+  "render_fps": 30,
+  "fast_render": true,
+  "fast_render_editions": [
+    "API",
+    "Dropshot"
+  ],
+  "transition_batch_size": 4,
+  "software_render_without_gpu": true,
+  "render_validation": {
+    "native_checks": 142,
+    "sample_duration_preserved": true,
+    "audio_and_captions_verified": true,
+    "reported_remote_pc_tested": false,
+    "paid_calls": 0
+  },
+  "render_update": {
+    "dropshot": {
+      "sha256": "efccbb8b01331905d4b18a1e06528eaf7d7bf1ad0dab99f5ac0ee7155f5d9ca3",
+      "changed_modules": [
+        "dino81_r3",
+        "dino_r5",
+        "dino_render_fast_v11"
+      ],
+      "runtime": 311,
+      "all_other_modules_unchanged": true,
+      "baseline_sha256": "52c3b86ab14b113d9f270c7446231ce47c1d7af32c189e9fc64f2bf0e01d9739"
+    },
+    "api": {
+      "sha256": "560def9fa39f434c035859ea7c964949cc4f17c7056072329dc63287aaa7a656",
+      "changed_modules": [
+        "dino81_r3",
+        "dino_r5",
+        "dino_render_fast_v11"
+      ],
+      "runtime": 311,
+      "all_other_modules_unchanged": true,
+      "baseline_sha256": "a66da29483f88cba88669f96662204364a2b0892eec235afa7d6d4eebd4582bb"
+    }
+  },
+  "shorts_delivery_gate": true,
+  "shorts_delivery_update": {
+    "DINO.exe": {
+      "sha256": "47870acbfcb39facdad6ad424efd9a67a5c0e3db5fe278b0a7d7561ca48a7489",
+      "changed_modules": [
+        "shorts_duration_v10"
+      ]
+    },
+    "DINO_API.exe": {
+      "sha256": "43a47baa9eebdf6c94ee6d4ebe6fdbc3c249f2436825066695631c5f92a75ee3",
+      "changed_modules": [
+        "shorts_duration_v10"
+      ]
+    }
+  },
+  "build_label": "DINO 13.2 몰입형",
+  "current_engines": {
+    "launcher_sha256": "d68193a7096db9f583103af9027b8bea358e1d543d8de5c894518eb2a52c600b",
+    "api_sha256": "2493d8adb9b9a988e4b068d60c3958a4a2bb1acbf58b26e9f0ee0a37cc712f7f",
+    "manual_sha256": "7e186424440cc722bdc3127262af03007ff6057fcb9abe8b0902a205ad205cff"
+  },
+  "distribution_identity_fixed": true,
+  "render_transition_batch": 4,
+  "diagnostic_command": "버전_편집정보_확인.cmd",
+  "dropshot_prompt_policy": {
+    "final_editor_limit_utf16": 2000,
+    "auto_scene_compaction": true,
+    "same_selected_writer": true,
+    "semantic_scene_review": true,
+    "preserve_direct_narration": true,
+    "preserve_style_reference_rules": true,
+    "request_identifier_included": true,
+    "submitted_requests_preserved": true,
+    "unsubmitted_old_length_errors_retryable": true,
+    "no_prefix_truncation": true,
+    "model_fallback": false
+  },
+  "input_limit_native_checks": 41,
+  "manual_editor": {
+    "editions": [
+      "API",
+      "Dropshot"
+    ],
+    "sentence_split": "sentence-ending period; decimal points preserved",
+    "mapping": "sentence 001 to numbered media 001",
+    "video_priority": "one MP4 overrides all same-number images",
+    "video_folder": "vidios or videos",
+    "user_confirmation_required": false,
+    "voice": "Inworld API or installed Qwen own voice",
+    "original_video_audio_used": false,
+    "short_video": "repeat to measured narration duration",
+    "fps": 30,
+    "longform_only": true,
+    "drag_drop_files": true,
+    "shorts_max_seconds": 170,
+    "live_voice_and_mp4_verified": true,
+    "helper_sha256": "4ddbbe688cc81127c9e4589a13d935946ccd756df36005d46f49d7e27aaaff15",
+    "validation_checks": 46,
+    "native_integration_checks": 112,
+    "motion_profiles": [
+      "still",
+      "zoom",
+      "pan",
+      "zoom_pan"
+    ],
+    "default_motion": "zoom_out",
+    "default_transition": "crossfade",
+    "version": "13.0.0",
+    "automatic_matching_on_change": true,
+    "sort_order": "numeric basename; folder and individual uploads",
+    "numbered_dotless_media": true,
+    "automatic_matching_ui_checks": 23,
+    "paid_update_verification_calls": 0,
+    "default_subtitle": "white_on_black_box",
+    "effects_persisted": true,
+    "effect_choices": [
+      "standard",
+      "off"
+    ],
+    "fixed_size_subpixel_cubic_sampling": true,
+    "same_graph_as_automatic_editor": true,
+    "zoom_start": 1.18,
+    "zoom_end": 1.0,
+    "cosine_ease": true,
+    "output_fps_explicit": 30,
+    "crossfade_timing_unchanged": true,
+    "voice_and_SRT_duration_preserved": true,
+    "auth_voice_effect_preferences_unchanged": true,
+    "actual_CPU_ffmpeg_checks": 26,
+    "smooth_motion_and_crossfade_preserved": true
+  },
+  "subscription_display": {
+    "duplicate_top_right_badge_removed": true,
+    "editions": [
+      "API",
+      "Dropshot"
+    ],
+    "engine_license_banner_preserved": true,
+    "server_authentication_preserved": true,
+    "subscription_expiry_unchanged": true,
+    "redundant_eight_second_poll_removed": true
+  },
+  "automatic_scene_effects": {
+    "editions": [
+      "API",
+      "Dropshot"
+    ],
+    "select_before_start": true,
+    "profiles": [
+      "still",
+      "zoom",
+      "pan",
+      "zoom_pan"
+    ],
+    "default": "zoom",
+    "existing_transitions_preserved": true,
+    "effects_frozen_per_edit": true,
+    "simple_choices": [
+      "standard",
+      "off"
+    ],
+    "settings_persisted": true
+  },
+  "job_lifecycle": {
+    "current_job_excluded_on_full_reset": true,
+    "per_job_end_and_exclude": true,
+    "excluded_work_can_be_restored": true,
+    "same_title_can_restart_after_exclusion": true,
+    "exclusion_persists_across_restart": true,
+    "late_callbacks_cannot_restore_excluded_jobs": true,
+    "generated_media_preserved": true,
+    "other_archived_jobs_preserved": true,
+    "editions": [
+      "API",
+      "Dropshot"
+    ],
+    "modes": [
+      "longform",
+      "shorts"
+    ],
+    "existing_restart_helper_used": true,
+    "frozen_checks": 100,
+    "browser_ui_checks": 10,
+    "paid_verification_calls": 0,
+    "customer_pc_live_tested": false
+  },
+  "job_lifecycle_update": {
+    "dropshot": {
+      "relative": "DINO.exe",
+      "sha256": "90a108fe1fb06c7cb041d790509a172123373e2596ec78d174f6532e6f136986",
+      "after_sha256": "d3cf490449e2b07bbf3aab0316c60184e487f20a64f35ffc082da2d5b905a8cc",
+      "changed_modules": [
+        "dino81_r3",
+        "dino_r5",
+        "dino_full_reset",
+        "dino_job_lifecycle"
+      ],
+      "runtime": 311
+    },
+    "api": {
+      "relative": "연결보조/R5_API/DINO_API.exe",
+      "sha256": "81438b0d699db4df2d2d802975fceff503713ee13d14abd7a6ee4725e2caa808",
+      "after_sha256": "37a3c3fdd4a39fc20317830651e02fede41523fdff949f8614214ba51c55a24e",
+      "changed_modules": [
+        "dino81_r3",
+        "dino_r5",
+        "dino_full_reset",
+        "dino_job_lifecycle"
+      ],
+      "runtime": 311
+    }
+  },
+  "customer_subscription_required": true,
+  "administrator_password_entry": true,
+  "local_install_optional": true,
+  "local_parallel": 1,
+  "own_voice_registration_persistent": true,
+  "recommendations_included": false,
+  "main_ui_model_names_hidden": true,
+  "default_transition": "crossfade",
+  "manual_default_subtitle": "white_on_black_box",
+  "bundled_model_weights": false,
+  "bundled_personal_voice": false,
+  "simple_effects_update": {
+    "default": "zoom + smooth transition",
+    "choices": [
+      "standard",
+      "off"
+    ],
+    "saved_on_this_pc": true,
+    "legacy_custom_preserved": true,
+    "native_checks": 82,
+    "ui_checks": 48,
+    "paid_verification_calls": 0,
+    "auth_modules_unchanged": true,
+    "personal_voice_unchanged": true
+  },
+  "local_features_menu": "설정 > 내 PC 설치·목소리",
+  "model_picker_update": {
+    "single_visible_dropdown": false,
+    "groups": [
+      "API · KIE",
+      "API · OpenRouter",
+      "내 PC · 로컬 모델"
+    ],
+    "uninstalled_local_label": "미설치",
+    "uninstalled_local_disabled": true,
+    "installation_pending_disabled": true,
+    "local_thumbnail_validation_fixed": true,
+    "local_serial_execution": true,
+    "api_parallel_restored": true,
+    "saved_selection_preserved": true,
+    "native_checks": 84,
+    "ui_checks": 35,
+    "paid_calls": 0,
+    "unchanged_auth_and_manual_modules": true,
+    "primary_source_dropdown_with_conditional_API_model": true
+  },
+  "microphone_update": {
+    "assets_revision": "12.0.2-mic1",
+    "production_iframe_delegation": "explicit loopback origins only",
+    "camera_not_delegated": true,
+    "local_record_status_visible": true,
+    "permission_wait_timeout_seconds": 20,
+    "late_grant_released": true,
+    "maximum_recording_seconds": 40,
+    "policy_checks": 10,
+    "headless_ui_checks": 33,
+    "real_microphone_used_in_tests": false,
+    "voice_uploads_in_tests": 0,
+    "paid_calls": 0,
+    "engines_and_auth_unchanged": true,
+    "existing_voice_preserved": true
+  },
+  "first_image_choice_update": {
+    "primary_options": [
+      "KIE",
+      "OpenRouter",
+      "로컬 · FLUX.2 klein 4B",
+      "로컬 · Z-Image Turbo"
+    ],
+    "installed_local_enabled": true,
+    "uninstalled_local_disabled": true,
+    "API_model_dropdown_only_for_API": true,
+    "last_API_model_preserved": true,
+    "duplicate_image_apply_buttons_removed": true,
+    "image_selection_does_not_generate": true,
+    "native_checks": 84,
+    "ui_checks": 59,
+    "recording_regression_checks": 35,
+    "policy_checks": 10,
+    "paid_calls": 0,
+    "auth_and_voice_data_unchanged": true,
+    "location": "original image-options / image-model / image-source dropdown",
+    "image_options_initially_open": true,
+    "local_selection_shows_only_selected_model_card": true,
+    "API_comparison_cards_preserved": true,
+    "API_pricing_comparison_hidden_for_local": true
+  },
+  "local_runtime_thumbnail_recovery": {
+    "engine_process_ownership": true,
+    "shared_engine_ownership": true,
+    "PID_reuse_guard": true,
+    "thumbnail_background_context_max_chars": 1000,
+    "full_narration_not_sent_to_image_model": true,
+    "exact_headlines_composed_separately": true,
+    "local_startup_preflight": true,
+    "startup_failure_not_retried_per_scene": true,
+    "startup_failure_not_fake_completed": true,
+    "frozen_native_checks": 92,
+    "paid_test_calls": 0,
+    "real_child_lifecycle_fixture_checks": 8,
+    "installed_missing_model_reload_regression_checks": 84,
+    "actual_GPU_generation_verified": false,
+    "auth_and_user_voice_unchanged": true
+  },
+  "thumbnail_background_separation": {
+    "patch": "visual-only-background-2",
+    "raw_narration_never_sent": true,
+    "raw_topic_label_never_sent": true,
+    "validated_visual_plan_or_grounded_body_scene": true,
+    "exact_two_headlines_composed_separately": true,
+    "full_bleed_no_caption_panel": true,
+    "pending_visual_not_fake_completed": true,
+    "accepted_requests_preserved": true,
+    "frozen_native_checks": 1030,
+    "paid_test_calls": 0,
+    "universal_pixel_success_not_guaranteed": true
+  },
+  "manual_smooth_motion_update": {
+    "version": "12.0.2",
+    "helper_sha256": "bde84bc91eacc01de1ff793ac57f6e774e17d1a54878cec6d0efdab26bfecfbe",
+    "fixed_size_subpixel_cubic_sampling": true,
+    "same_graph_as_automatic_editor": true,
+    "default_motion": "zoom_out",
+    "zoom_start": 1.18,
+    "zoom_end": 1.0,
+    "cosine_ease": true,
+    "output_fps_explicit": 30,
+    "crossfade_timing_unchanged": true,
+    "voice_and_SRT_duration_preserved": true,
+    "auth_voice_effect_preferences_unchanged": true,
+    "actual_CPU_ffmpeg_checks": 26
+  },
+  "automatic_continuation": {
+    "patch": "explicit-auto-continuation-1",
+    "full_production_default": true,
+    "image_completion_advances_saved_voice_SRT_video_and_final_MP4": true,
+    "browser_refresh_recovers_explicit_active_intent": true,
+    "requires_running_program_and_open_production_view": true,
+    "stop_archive_failed_and_finished_jobs_not_restarted": true,
+    "shared_frontend_promise_and_native_claim_prevent_duplicates": true,
+    "installed_registered_local_voice_does_not_require_API_credentials": true,
+    "no_provider_fallback_or_saved_voice_change": true,
+    "existing_images_clean_thumbnail_and_video_count_preserved": true,
+    "native_continuation_checks": 78,
+    "client_control_flow_checks": 39,
+    "paid_test_calls": 0,
+    "current_200_scene_MP4_not_rendered_in_test": true
+  },
+  "separate_from_V12": true,
+  "codex_images": {
+    "handoff_required": true,
+    "external_program_can_start_Codex_image_tool": false,
+    "image_source": "built-in tool in an image-enabled Codex conversation",
+    "same_scene_prompt_formatter": true,
+    "receipt_request_and_image_hash_validation": true,
+    "stopped_excluded_superseded_results_rejected": true,
+    "auto_continue_voice_captions_MP4": true,
+    "V13_page_must_stay_open": true,
+    "separate_image_API": false,
+    "silent_paid_fallback": false,
+    "image_price": "Codex availability and usage limits",
+    "settings_file": "r13_api_settings.json",
+    "jobs_directory": "r13_jobs",
+    "customer_subscription_and_admin_auth_retained": true
+  },
+  "prepared_V12_fixes_included": [
+    "12.0.7 thumbnail background/title separation and smooth CPU rendering",
+    "12.0.8 single-owner automatic continuation after exact assets complete"
+  ],
+  "codex_verification": {
+    "checks": 242,
+    "actual_builtin_generated_image_imported": true,
+    "actual_CPU_FFmpeg_MP4_rendered": true,
+    "new_paid_voice_API_tested": false,
+    "customer_state_bundled": false,
+    "reports": "V13_기능시험결과.json",
+    "packaged_startup_editions": [
+      "API",
+      "Dropshot"
+    ],
+    "isolated_test_ports": [
+      5940,
+      5941,
+      5942
+    ],
+    "before_auth_blocked": true
+  },
+  "creator_preferences": {
+    "narration_style": "시청자 직접 공감 해설",
+    "cinematic_roleplay": false,
+    "scene_by_sentence": true,
+    "all_image_providers_shared_policy": true,
+    "reference_identity_preserved": true,
+    "lead_not_forced_into_every_scene": true,
+    "korean_props_and_signage": "short exact Hangul when needed",
+    "no_padding_to_fill_duration": true,
+    "thumbnail_font": "Pretendard Bold",
+    "caption_font": "Pretendard Black"
+  },
+  "manual_shared_quality": {
+    "resolution": "1080p",
+    "fit": "crop",
+    "caption_settings_inherited": true,
+    "parent_auth_required": true
+  },
+  "visible_inputs": {
+    "voice_provider": true,
+    "inworld_basic_key": true,
+    "inworld_voice_id": true,
+    "reference_photo": true
+  },
+  "beginner_guide": "00_설치와사용_처음부터.txt",
+  "codex_local_install_prompt": "로컬설치_Codex에_복사할요청문.txt",
+  "build_date": "2026-10-11",
+  "release_label": "보강완료",
+  "selected_retry_style_preserved": true,
+  "floating_handbook_popup": false,
+  "subscription_expiry_enforced": true,
+  "video_policy": {
+    "default_count": 0,
+    "kie_key_missing_count": 0,
+    "key_alone_never_enables_video": true,
+    "requires_explicit_positive_count": true,
+    "first_n_scenes_only": true,
+    "providers": [
+      "KIE API",
+      "Dropshot MCP"
+    ],
+    "no_cross_provider_paid_fallback": true
+  },
+  "kie_live_verification": {
+    "model": "bytedance/v1-pro-fast-image-to-video",
+    "duration_seconds": 5.041667,
+    "credits": 16.0,
+    "scope": "one owner PC and account; not every customer network"
+  },
+  "illustrated_manual": {
+    "entry": "00_그림_사용설명서.html",
+    "web_path": "/dino-guide/",
+    "sections": 15,
+    "images": 8,
+    "new_user_recommendation": "Codex text and images + local Qwen voice; video count 0 initially",
+    "telegram_guide_included": true,
+    "customer_room_and_cafe_links_included": true,
+    "local_offline_images": true
+  }
+}

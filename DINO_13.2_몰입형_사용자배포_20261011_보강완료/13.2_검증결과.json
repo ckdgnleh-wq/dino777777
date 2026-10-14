@@ -1,0 +1,41 @@
+{
+  "tests": [
+    "version_labels_and_opt_in_video_count",
+    "shared_direct_viewer_policy_all_image_providers_and_dropshot_text_engine",
+    "queued_retry_preserves_clicked_style_without_changing_other_scenes",
+    "codex_and_api_request_prompts_use_selected_scene_style",
+    "idle_retry_replaces_previous_scene_style_override",
+    "kie_key_normalization",
+    "kie_documented_request_and_task_persistence_before_poll",
+    "kie_resume_never_resubmits",
+    "kie_missing_or_other_account_task_preserved_and_blocked",
+    "kie_ambiguous_paid_submission_stops_after_one_request",
+    "subscription_checkpoint_rechecks_expiry_during_work",
+    "http_subscription_guard_all_creation_paths_and_expiry_while_open",
+    "offline_cached_server_proof_not_usable_after_expiry",
+    "handbook_static_path_boundary_and_no_floating_popup",
+    "busy_retry_sends_clicked_realistic_style",
+    "idle_retry_sends_clicked_realistic_style"
+  ],
+  "ok": true,
+  "version": "13.2.0",
+  "display": "DINO 13.2 몰입형 · 사용자버전",
+  "subscription_invalid_cases_blocked": 4,
+  "no_external_generation_in_regression_tests": true,
+  "actual_billing_server_expiration_not_changed": true,
+  "kie_live": {
+    "model": "bytedance/v1-pro-fast-image-to-video",
+    "duration_seconds": 5.041667,
+    "credits": 16.0,
+    "scope": "one owner PC and account; not every customer network"
+  },
+  "privacy": {
+    "customer_state_included": false,
+    "personal_voices_included": false,
+    "api_keys_included": false
+  },
+  "limitations": [
+    "Subscription expiry cases used isolated simulated server states. Real billing dates were not changed.",
+    "KIE live generation verified one account and one PC."
+  ]
+}
